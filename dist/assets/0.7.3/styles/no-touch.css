@@ -1,0 +1,177 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:300);
+html, body {
+    min-height: 100%;
+    -webkit-font-smoothing: antialiased;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    background: #fff;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style-type: none;
+}
+/*=================================== container 
+*/
+
+.hexagon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    margin-top: -30px;
+    margin-left: -30px;
+    -webkit-transform: scale(3.00005);
+    -o-transform: scale(3.00005);
+    transform: scale(3.00005);
+    /* hack Firefox smooth edge */
+    -webkit-transform-origin: center;
+    -o-transform-origin: center;
+    transform-origin: center;
+}
+/*=================================== top and bottom triangle
+*/
+
+.polygon_top, .polygon_bottom {
+    position: absolute;
+    width: 0;
+    height: 0;
+    -webkit-transition: width .3s ease-in-out, border .1s linear, border-radius .5s ease-in-out;
+    -o-transition: width .3s ease-in-out, border .1s linear, border-radius .5s ease-in-out;
+    transition: width .3s ease-in-out, border .1s linear, border-radius .5s ease-in-out;
+    border-right: 18px solid transparent;
+    border-left: 18px solid transparent;
+}
+.polygon_top a, .polygon_bottom a {
+    font-size: 0;
+    display: block;
+    width: 100%;
+    -webkit-transition: color, font-size .3s;
+    -o-transition: color, font-size .3s;
+    transition: color, font-size .3s;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0);
+}
+.polygon_top:nth-child(1), .polygon_top:nth-child(3), .polygon_bottom:nth-child(4), .polygon_bottom:nth-child(6) {
+    cursor: pointer;
+}
+.polygon_top:nth-child(1):hover > a, .polygon_top:nth-child(3):hover > a, .polygon_bottom:nth-child(4):hover > a, .polygon_bottom:nth-child(6):hover > a {
+    font-size: 1em;
+    color: rgba(255, 255, 255, 1);
+}
+.polygon_top:nth-child(1) {
+    right: 0;
+    -webkit-transform: translateX(-30px) translateY(-15px);
+    -o-transform: translateX(-30px) translateY(-15px);
+    transform: translateX(-30px) translateY(-15px);
+    border-bottom: 30px solid rgba(255, 69, 0, 1);
+}
+.polygon_top:nth-child(1):hover {
+    z-index: 100;
+    width: 120px;
+    /*border-radius: 4px 0 0 4px;*/
+    border-left: 18px solid rgba(255, 69, 0, 1);
+}
+.polygon_top:nth-child(1) > a {
+    line-height: 30px;
+}
+.polygon_top:nth-child(2) {
+    -webkit-transform: translateX(12px) translateY(15px);
+    -o-transform: translateX(12px) translateY(15px);
+    transform: translateX(12px) translateY(15px);
+    border-bottom: 30px solid rgba(255, 69, 0, .6);
+}
+.polygon_top:nth-child(3) {
+    left: 0;
+    -webkit-transform: translateX(30px) translateY(-15px);
+    -o-transform: translateX(30px) translateY(-15px);
+    transform: translateX(30px) translateY(-15px);
+    border-bottom: 30px solid rgba(255, 69, 0, .8);
+}
+.polygon_top:nth-child(3):hover {
+    z-index: 100;
+    width: 120px;
+    /* border-radius: 0 4px 4px 0;*/
+    border-right: 18px solid rgba(255, 69, 0, .8);
+}
+.polygon_top:nth-child(3) > a {
+    line-height: 30px;
+    text-align: right;
+}
+.polygon_bottom:nth-child(4) {
+    right: 0;
+    -webkit-transform: translateX(-30px) translateY(15px);
+    -o-transform: translateX(-30px) translateY(15px);
+    transform: translateX(-30px) translateY(15px);
+    border-top: 30px solid rgba(255, 69, 0, .5);
+}
+.polygon_bottom:nth-child(4):hover {
+    z-index: 100;
+    width: 120px;
+    /*border-radius: 4px 0 0 4px;*/
+    border-left: 18px solid rgba(255, 69, 0, .5);
+}
+.polygon_bottom:nth-child(4) > a {
+    line-height: 30px;
+    margin-top: -30px;
+    text-align: left;
+}
+.polygon_bottom:nth-child(5) {
+    -webkit-transform: translateX(12px) translateY(-15px);
+    -o-transform: translateX(12px) translateY(-15px);
+    transform: translateX(12px) translateY(-15px);
+    border-top: 30px solid rgba(255, 69, 0, .9);
+}
+.polygon_bottom:nth-child(6) {
+    -webkit-transform: translateX(30px) translateY(15px);
+    -o-transform: translateX(30px) translateY(15px);
+    transform: translateX(30px) translateY(15px);
+    border-top: 30px solid rgba(255, 69, 0, .7);
+}
+.polygon_bottom:nth-child(6):hover {
+    z-index: 100;
+    width: 120px;
+    /*border-radius: 0 4px 4px 0;*/
+    border-right: 18px solid rgba(255, 69, 0, .7);
+}
+.polygon_bottom:nth-child(6) > a {
+    line-height: 30px;
+    margin-top: -30px;
+    text-align: right;
+}
+p {
+    font-size: .3em;
+    margin-top: 9em;
+    cursor: default;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-align: center;
+    color: #666;
+}
+/* iPads (portrait and landscape) ----------- */
+
+@media only screen and (max-width: 960px) {
+    .hexagon {
+        -webkit-transform: scale(2.00005);
+        -o-transform: scale(2.00005);
+        transform: scale(2.00005);
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .hexagon {
+        -webkit-transform: scale(1.50005);
+        -o-transform: scale(1.50005);
+        transform: scale(1.50005);
+    }
+}
